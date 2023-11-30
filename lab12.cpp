@@ -1,8 +1,97 @@
+/*
+* Alex Heidorn
+* Created: 11/30/23
+* CS2 Lab 12
+*  
+*/
+/*
+in my lab11 submission i said i was probably going to skip this assingment too cuz i had the extra drop,
+but this assignment was really quick and easy so i just decided to hammer it out
+*/
+
+/*Input from .txt file:
+I 50
+I 25
+I 10
+I 15
+I 30
+I 80
+I 60
+I 70
+I 90
+I 95
+
+IN
+
+R 30 
+
+F 70
+
+
+Q
+*/
+
+/* Output: Read from file (Y/N)? Y
+Filename: bintree.txt
+Inserting 50
+Inserting 25
+Inserting 10
+curr is 25
+Inserting 15
+curr is 25
+curr is 10
+Inserting 30
+curr is 25
+Inserting 80
+Inserting 60
+curr is 80
+Inserting 70
+curr is 80
+curr is 60
+Inserting 90
+curr is 80
+Inserting 95
+curr is 80
+curr is 90
+Print In Order:
+         95
+      90
+   80
+         70
+      60
+ 50
+      30
+   25
+         15
+      10
+
+Removing value 30
+Deleting node with data 30
+Successfully removed
+Finding 70
+Looking at 50
+Looking at 80
+Looking at 60
+Looking at 70
+Found
+Deleting node with data 50
+Deleting node with data 80
+Deleting node with data 90
+Deleting node with data 95
+Deleting node with data 60
+Deleting node with data 70
+Deleting node with data 25
+Deleting node with data 10
+Deleting node with data 15
+PS C:\Users\alexh\CS2> 
+*/
+
 #include <iostream>
 #include <fstream>
 #include "HeidornBinaryTree.cpp"
 
 using namespace std;
+
 
 void traverse(shared_ptr<BinaryNode>n, ostream &out) {
     if (n != nullptr) {
