@@ -1,10 +1,10 @@
 #include <iostream>
 #include <fstream>
-#include "BinaryTree.h"
+#include "HeidornBinaryTree.cpp"
 
 using namespace std;
 
-void traverse(BinaryNode *n, ostream &out) {
+void traverse(shared_ptr<BinaryNode>n, ostream &out) {
     if (n != nullptr) {
         out << "Pre " << n->getData() << " ";
         traverse(n->getLeft(), out);
