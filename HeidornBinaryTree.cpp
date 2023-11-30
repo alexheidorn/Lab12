@@ -32,7 +32,8 @@ namespace std {
 
     shared_ptr<BinaryNode>doInsert(shared_ptr<BinaryNode>curr, int d) {
         if (curr == NULL) {
-            return new BinaryNode(d);
+            //return new BinaryNode(d);
+            return make_shared<BinaryNode>(d);
         }
         cout << "curr is " << curr->getData() << endl;
         int cmp = curr->compare(d);
@@ -47,7 +48,8 @@ namespace std {
 
     void BinaryTree::insert(int d) {
         if (root == nullptr) {
-            root = new BinaryNode(d);
+            //root = new BinaryNode(d);
+            root = make_shared<BinaryNode>(d);
             return;
         }
         int cmp = root->compare(d);
@@ -64,12 +66,12 @@ namespace std {
             shared_ptr<BinaryNode>discard = curr;
             nextD = curr->getData();
             if (curr->getRight() == nullptr) {
-                delete discard;
+                //delete discard;
                 return nullptr;
             }
             else {
                 shared_ptr<BinaryNode>rightC = curr->getRight();
-                delete discard;
+                //delete discard;
                 return rightC;
             }
         }
@@ -88,19 +90,19 @@ namespace std {
             found = true;
             if (curr->getLeft() == nullptr) {
                 if (curr->getRight() == nullptr) {
-                    delete curr;
+                    //delete curr;
                     return nullptr;
                 }
                 else {
                     shared_ptr<BinaryNode>rightC = curr->getRight();
-                    delete curr;
+                    //delete curr;
                     return rightC;
                 }
             }
             else {
                 if (curr->getRight() == nullptr) {
                     shared_ptr<BinaryNode>leftC = curr->getLeft();
-                    delete curr;
+                    //delete curr;
                     return leftC;
                 }
                 else {
